@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>酒精的危害</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      padding: 0 2rem 2rem 2rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+    .header-bg {
+      background-color: #f7f7f7;
+      border-bottom: 4px solid #3498db;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+    .mermaid {
+      margin: 3rem auto 0;
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 100%;
+    }
+    .summary, .references {
+      background-color: #f7f7f7;
+      padding: 1rem;
+      border-left: 4px solid #3498db;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #2c3e50;
+    }
+    .references h3 {
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+    }
+    .references ul {
+      padding-left: 1.4rem;
+      margin: 0;
+    }
+    .references li {
+      margin-bottom: 0.6rem;
+    }
+	table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1.5rem; /* 表格底部间距 */
+}
+
+.summary {
+  margin-top: 1.5rem; /* 总结顶部间距 */
+}
+  </style>
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
+    document.addEventListener('copy', e => e.preventDefault());
+    document.addEventListener('keydown', function (e) {
+      if (
+        (e.ctrlKey || e.metaKey) && ['c', 'u', 's', 'p'].includes(e.key.toLowerCase()) || 
+        ['F12', 'PrintScreen'].includes(e.key)
+      ) {
+        e.preventDefault();
+      }
+    });
+    setInterval(() => {
+      const before = new Date();
+      debugger;
+      const after = new Date();
+      if (after - before > 100) {
+        document.body.innerHTML = '<h1 style="text-align:center;color:red;">已检测到调试器，页面已被锁定</h1>';
+      }
+    }, 1000);
+	
+  </script>
+</head>
+<body>
+
+  <div class="header-bg">
+    <h1>酒精在肝脏代谢</h1>
+  </div>
+
+  
+  <p>
+    酒精进入体内后，主要在肝脏代谢，不同饮酒量会激活不同的代谢途径。正常饮酒依赖ADH系统，大量饮酒则启动MEOS系统，产生自由基，加重肝脏负担。乙醛积聚和自由基会扩散至全身，对全身产生危害。
+  </p>
+
+  <div class="mermaid">
+    graph TD
+      A[乙醇（饮酒）] --> |胃 & 小肠吸收|C[进入血液循环 → 约90%到达肝脏代谢]
+      C --> D{肝脏开始代谢<br>乙醇}
+	  D --> s[<b style="color:red">正常饮酒</b><br>一杯纯酒精约 10~14 克<br>男性不超过2杯/天<br>女性不超过1杯/天<br>特殊人群、脂肪肝等肝病者不喝]
+      D --> s1[<b style="color:red">大量饮酒/长期饮酒</b>]
+      s --> |细胞质内<br>乙醇+ NAD⁺<br>酒精脱氢酶ADH |E1[乙醛+ NADH + H⁺]
+      s1 --> |ADH饱和后，启动微粒体乙醇氧化系统（MEOS）CYP2E1基因表达量↑↑↑<br>内质网|E2[乙醛 + 自由基↑↑↑ ]
+	  E2 --> r[乙醛<br>毒性强，脸红、恶心]
+	  E2 --> F2[自由基]
+	  F2 --> F3[氧化应激：攻击肝细胞膜<br>攻击线粒体膜<br>耗尽谷胱甘肽等抗氧化物]
+	  F2 --> F4[诱导炎症因子<br>引起炎症风暴<br>导致肝细胞坏死和炎症]
+	  F2 --> F5[乙醛积聚 + 自由基联合作用<br>破坏DNA]
+      r --> E1
+      E1 --> |线粒体<br>乙醛+ NAD⁺<br>乙醛脱氢酶 ALDH|F1[乙酸 + NADH + H⁺ ]
+
+      F1 -->|线粒体<br>乙酸 + 辅酶A + ATP<br>乙酸激酶| G[乙酰辅酶A+AMP + PPi ]
+
+      r --> |乙醛不能及时代谢|r1[乙醛积聚]
+	  r1 --> r2[扩散出细胞外与神经递质反应<br>醉酒感、头痛、意识模糊]
+	  r1 --> r3[刺激脂肪合成]
+	  r1 --> r4[乙醛与DNA/蛋白形成加合物<br>可能诱发突变或癌变]
+	
+
+      G --> |线粒体|H1[乙酰辅酶A进入TCA循环 ]
+	  H1 --> H6[生成ATP、CO₂、水]
+	  G --> H2[多余的乙酰辅酶A]
+	  H2--> |细胞质<br>进入脂肪酸合成通路|H3[甘油三酯] 
+	  H3--> H4[脂肪贮存→ 脂肪肝] 
+	  H3--> H5[通过 VLDL 运往脂肪/肌肉储存或利用] 
+    
+  </div>
+  
+   <p class="intro">
+    CYP2E1催化乙醇代谢伴随大量自由基（ROS）产生，但并非所有自由基均大量生成，自由基及其机制包括：
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>产生的自由基种类</th>
+        <th>主要机制</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>超氧阴离子（O₂⁻·）</td>
+        <td>电子泄漏</td>
+      </tr>
+      <tr>
+        <td>过氧化氢（H₂O₂）</td>
+        <td>氧化酶副反应</td>
+      </tr>
+      <tr>
+        <td>羟基自由基（·OH）</td>
+        <td>Fenton反应（Fe²⁺ + H₂O₂）产生</td>
+      </tr>
+      <tr>
+        <td>脂质过氧化物（LOO·）</td>
+        <td>攻击细胞膜脂质，引发链式氧化反应</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="summary">
+    <h3>总结：酒精代谢产乙醛与自由基，长期或大量饮酒损肝并危害全身。</h3>
+    <ul>
+	   <li><span class="highlight">代谢路径不同：</span>正常饮酒主要通过酒精脱氢酶（ADH）在肝脏中代谢乙醇；大量饮酒会诱导微粒体乙醇氧化系统（MEOS）活跃，产生大量自由基。</li>
+    <li><span class="highlight">乙醛毒性强：</span>乙醇代谢产物乙醛具有毒性，若积聚会导致脸红、恶心、头痛、醉感等不适反应。</li>
+    <li><span class="highlight">自由基危害广泛：</span>MEOS途径代谢乙醇会产生大量自由基，导致肝细胞膜和线粒体损伤，诱发炎症反应，促进肝细胞坏死甚至癌变。</li>
+    <li><span class="highlight">全身系统受影响：</span>乙醛和自由基可扩散至全身，影响神经系统（导致醉感）、心血管系统（升高血压）、胃肠道（刺激胃酸）、免疫系统（诱导慢性炎症）。</li>
+    <li><span class="highlight">长期危害显著：</span>长期大量饮酒不仅会导致脂肪肝、肝炎、肝硬化，还可能引发神经退行性疾病和多系统功能障碍。</li>
+  </ul>
+</body>
+	  
+    </ul>
+  </div>
+
+  <div class="references">
+    <h3>参考文献</h3>
+    <ul>
+       <li>Uncovering the impact of alcohol on internal organs and reproductive health: Exploring TLR4/NF‐κB and CYP2E1/ROS/Nrf2 pathways. <em>Environmental Toxicology and Pharmacology, 2024.</em></li>
+    <li>Autophagy, oxidative stress, and alcoholic liver disease: A systematic review and potential clinical applications. <em>Oxidative Medicine and Cellular Longevity, 2023.</em></li>
+    <li>The role of oxidative stress in alcoholic fatty liver disease: A systematic review and meta‑analysis of preclinical studies. <em>Free Radical Biology and Medicine, 2024.</em></li>
+    <li>The IARC perspective on alcohol reduction or cessation and cancer risk. <em>New England Journal of Medicine, 2024.</em></li>
+  </ul>
+     
+	  
+    </ul>
+  </div>
+
+</body>
+</html>
